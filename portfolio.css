@@ -1,0 +1,218 @@
+/* index.css */
+
+/* Reset some default browser styles */
+body, h1, h2, h3, h4, p, ul, li {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.profile-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.profile-image {
+    width: 150px; /* Adjust size as needed */
+    height: 150px; /* Adjust size as needed */
+    border-radius: 50%; /* Makes the image circular */
+    border: 5px solid #4CAF50; /* Designer frame color and thickness */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Optional: adds shadow for more effect */
+    object-fit: cover; /* Ensures the image covers the circular area */
+}
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #f0f0f0; /* Light gray text */
+    background-color: #1a1a1a; /* Black background */
+    padding-top: 60px;
+}
+
+/* Navigation Bar */
+nav {
+    background: #ff6600;
+    padding: 0.5rem 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    z-index: 1000;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 1rem;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    display: block;
+    font-weight: bold;
+    transition: color 0.3s ease, background 0.3s ease, transform 0.3s ease;
+    border-radius: 5px;
+}
+
+nav a:hover {
+    color: #1a1a1a; /* Black text */
+    background: #ff9900; /* Lighter orange */
+    transform: scale(1.05);
+}
+
+/* Header */
+header {
+    background: #1a1a1a; /* Black background */
+    color: #ff6600; /* Orange text */
+    text-align: center;
+    padding: 2rem 1rem;
+    border-bottom: 3px solid #ff6600; /* Orange border at the bottom */
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+header p {
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+}
+
+/* Main Content */
+main {
+    padding: 1rem;
+}
+
+section {
+    background: #333; /* Dark gray background */
+    margin-bottom: 1.5rem;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+section.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+section:hover {
+    box-shadow: 0 0 25px rgba(0,0,0,0.4);
+    transform: translateY(-5px);
+}
+
+/* Section Headings */
+h2 {
+    color: #ff6600; /* Orange text */
+    border-bottom: 2px solid #ff6600; /* Orange border */
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Lists */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 0.5rem;
+}
+
+/* Project Section */
+.project h3 {
+    margin-top: 0;
+    color: #ff6600; /* Orange text */
+}
+
+.project h4 {
+    margin-bottom: 0.5rem;
+    color: #ff9900; /* Lighter orange text */
+}
+
+.project p {
+    margin-bottom: 1rem;
+    color: #ddd; /* Light gray text */
+}
+
+.project a {
+    color: #ff6600; /* Orange text */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+.project a:hover {
+    color: #ff9900; /* Lighter orange */
+    text-decoration: underline;
+}
+
+/* Links */
+a {
+    color: #ff6600; /* Orange text */
+    text-decoration: none;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+a:hover {
+    color: #ff9900; /* Lighter orange */
+    text-decoration: underline;
+}
+
+/* Footer */
+footer {
+    background: #1a1a1a; /* Black background */
+    color: #ff6600; /* Orange text */
+    text-align: center;
+    padding: 1rem 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Keyframes for Section Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Apply Animation */
+section {
+    animation: fadeIn 1s ease-out forwards;
+}
+
+
+/* Slide-in Animation */
+.slide-in {
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+    opacity: 0; /* Hide initially */
+    transform: translateY(30px); /* Start below the normal position */
+    animation: slideIn 1s ease-out forwards; /* Apply animation */
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px); /* Start 30px below */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* End at the normal position */
+    }
